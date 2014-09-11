@@ -9,7 +9,9 @@
 	var orcidRegex = new RegExp("(\\d{4}-){3,}\\d{3}[\\dX]");
 
 	function offset(input) {
-		return '&start=0&rows=10';
+		var start = hasValue(input.start) ? input.start : 0;
+		var rows = hasValue(input.rows) ? input.rows : 10;
+		return '&start=' + start + '&rows=' + rows;
 	}
 
 	function hasValue(ref) {

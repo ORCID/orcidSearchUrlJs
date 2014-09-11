@@ -17,6 +17,19 @@ describe(
 								.toBe(
 										'https://orcid.org/v1.1/search/orcid-bio/?q=%7B!edismax%20qf%3D%22given-and-family-names%5E50.0%20family-name%5E10.0%20given-names%5E5.0%20credit-name%5E10.0%20other-names%5E5.0%20text%5E1.0%22%20pf%3D%22given-and-family-names%5E50.0%22%20mm%3D1%7Dmy%20search%20terms&start=0&rows=10');
 					});
+			it(
+					'should be possible to use a different offset',
+					function() {
+						var input = {
+							text : 'my search terms',
+							start : 15,
+							rows : 5
+						};
+						var url = orcidSearchUrlJs.buildUrl(input);
+						expect(url)
+								.toBe(
+										'https://orcid.org/v1.1/search/orcid-bio/?q=%7B!edismax%20qf%3D%22given-and-family-names%5E50.0%20family-name%5E10.0%20given-names%5E5.0%20credit-name%5E10.0%20other-names%5E5.0%20text%5E1.0%22%20pf%3D%22given-and-family-names%5E50.0%22%20mm%3D1%7Dmy%20search%20terms&start=15&rows=5');
+					});
 		});
 
 describe('ORCID iD search', function() {

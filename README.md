@@ -34,6 +34,14 @@ The input JSON object can have the following properties.
         <td>keyword</td>
         <td>Text to search across the keyword field.</td>
     </tr>
+    <tr>
+        <td>start</td>
+        <td>The row to start the results from (for paging). Default is 0 (the first row).</td>
+    </tr>
+    <tr>
+        <td>rows</td>
+        <td>The maximum number of results to return.</td>
+    </tr>
 </table>
 
 See orcidSearchUrlSpec.js for examples.
