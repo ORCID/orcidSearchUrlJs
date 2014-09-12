@@ -46,6 +46,8 @@ The input JSON object can have the following properties.
 
 See orcidSearchUrlSpec.js for examples.
 
+* setBaseUrl(url) Sets the base URL to use. The default is 'https://orcid.org/v1.1/search/orcid-bio/'.
+
 
 ## Using in a browser
 Include orcidSearchUrl.js and call ``orcidSearchUrlJs.buildUrl({ text: 'my search terms'})``.

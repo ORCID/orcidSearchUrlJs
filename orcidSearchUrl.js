@@ -45,6 +45,10 @@
 		return doneSomething ? baseUrl + '?q=' + encodeURIComponent(query) : null;
 	}
 
+	exports.setBaseUrl = function(url) {
+		baseUrl = url;
+	};
+
 	exports.buildUrl = function(input) {
 		if (hasValue(input.text)) {
 			var regexResult = orcidRegex.exec(input.text);
