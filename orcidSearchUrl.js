@@ -15,7 +15,7 @@
 	}
 
 	function hasValue(ref) {
-		return typeof ref !== 'undefined' && ref !== null && ref != '';
+		return typeof ref !== 'undefined' && ref !== null && ref !== '';
 	}
 
 	function buildAdvancedSearchUrl(input) {
