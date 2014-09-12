@@ -43,7 +43,6 @@ describe(
 						expect(url)
 								.toBe(
 										'http://localhost:8080/orcid-pub-web/v1.1/search/orcid-bio/?q=%7B!edismax%20qf%3D%22given-and-family-names%5E50.0%20family-name%5E10.0%20given-names%5E5.0%20credit-name%5E10.0%20other-names%5E5.0%20text%5E1.0%22%20pf%3D%22given-and-family-names%5E50.0%22%20mm%3D1%7Dmy%20search%20terms&start=0&rows=10');
-						
 					});
 		});
 
@@ -74,3 +73,18 @@ describe(
 										'https://orcid.org/v1.1/search/orcid-bio/?q=given-names%3Awill%20AND%20family-name%3Asimpson%20OR%20other-names%3Awill%20AND%20keyword%3Aphysics');
 					});
 		});
+
+describe('Validate input', function() {
+	it('should check if there are no search terms provided', function() {
+		var input = {};
+		var validationResult = orcidSearchUrlJs.isValidInput(input);
+		expect(validationResult).toBe(false);
+	});
+	it('should pass if any search terms provided', function() {
+		var input = {};
+		input.familyName = 'Crumblehume';
+		var validationResult = orcidSearchUrlJs.isValidInput(input);
+		expect(validationResult).toBe(true);
+	});
+
+});

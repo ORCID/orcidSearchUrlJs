@@ -48,6 +48,8 @@ See orcidSearchUrlSpec.js for examples.
 
 * setBaseUrl(url) Sets the base URL to use. The default is 'https://orcid.org/v1.1/search/orcid-bio/'.
 
+* isValidInput(input) Returns true only if there is some input to search with.
+
 
 ## Using in a browser
 Include orcidSearchUrl.js and call ``orcidSearchUrlJs.buildUrl({ text: 'my search terms'})``.

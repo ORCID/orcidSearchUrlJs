@@ -49,6 +49,16 @@
 		baseUrl = url;
 	};
 
+	exports.isValidInput = function(input) {
+		var fieldsToCheck = [ input.text, input.givenNames, input.familyName, input.keyword ];
+		for ( var i = 0; i < fieldsToCheck.length; i++) {
+			if (hasValue(fieldsToCheck[i])) {
+				return true;
+			}
+		}
+		return false;
+	};
+
 	exports.buildUrl = function(input) {
 		if (hasValue(input.text)) {
 			var regexResult = orcidRegex.exec(input.text);
