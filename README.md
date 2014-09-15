@@ -50,6 +50,9 @@ See orcidSearchUrlSpec.js for examples.
 
 * isValidInput(input) Returns true only if there is some input to search with.
 
+* isValidOrcidId(orcidId) Returns true only if orcidId contains a valid looking ORCID iD URI or path. 
+Allows preceding and trailing whitespace.
+
 
 ## Using in a browser
 Include orcidSearchUrl.js and call ``orcidSearchUrlJs.buildUrl({ text: 'my search terms'})``.

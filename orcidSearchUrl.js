@@ -6,7 +6,9 @@
 
 	var baseUrl = 'https://orcid.org/v1.1/search/orcid-bio/';
 	var quickSearchEDisMax = '{!edismax qf="given-and-family-names^50.0 family-name^10.0 given-names^5.0 credit-name^10.0 other-names^5.0 text^1.0" pf="given-and-family-names^50.0" mm=1}';
-	var orcidRegex = new RegExp("(\\d{4}-){3,}\\d{3}[\\dX]");
+	var orcidPathRegex = new RegExp("(\\d{4}-){3,}\\d{3}[\\dX]");
+	var orcidFullRegex = new RegExp(
+			"^\\s*((http://)?([^/]*orcid\\.org|localhost.*/orcid-web)/)?(\\d{4}-){3,}\\d{3}[\\dX]\\s*$");
 
 	function offset(input) {
 		var start = hasValue(input.start) ? input.start : 0;
@@ -58,10 +60,10 @@
 		}
 		return false;
 	};
-	
-	function extractOrcidId(string){
-		var regexResult = orcidRegex.exec(string);
-		if(regexResult){
+
+	function extractOrcidId(string) {
+		var regexResult = orcidPathRegex.exec(string);
+		if (regexResult) {
 			return regexResult[0];
 		}
 		return null;
@@ -80,6 +82,13 @@
 			// Advanced search
 			return buildAdvancedSearchUrl(input);
 		}
+	};
+
+	exports.isValidOrcidId = function(orcidId) {
+		if (orcidFullRegex.exec(orcidId)) {
+			return true;
+		}
+		return false;
 	};
 
 })(typeof exports === 'undefined' ? this.orcidSearchUrlJs = {} : exports);

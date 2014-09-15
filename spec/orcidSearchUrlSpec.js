@@ -88,3 +88,26 @@ describe('Validate input', function() {
 	});
 
 });
+
+describe('Validate ORCID iD', function() {
+	it('should detect a valid ORCID iD URI', function() {
+		var orcidId = 'http://orcid.org/0000-0003-4654-1403';
+		var validationResult = orcidSearchUrlJs.isValidOrcidId(orcidId);
+		expect(validationResult).toBe(true);
+	});
+	it('should detect a invalid ORCID iD URI', function() {
+		var orcidId = 'http://orcid.org/0000-0003-4654-14031';
+		var validationResult = orcidSearchUrlJs.isValidOrcidId(orcidId);
+		expect(validationResult).toBe(false);
+	});
+	it('should detect a valid ORCID iD path', function() {
+		var orcidId = '0000-0003-4654-1403';
+		var validationResult = orcidSearchUrlJs.isValidOrcidId(orcidId);
+		expect(validationResult).toBe(true);
+	});
+	it('should detect a invalid ORCID iD path', function() {
+		var orcidId = '0000-0003-4654-14031';
+		var validationResult = orcidSearchUrlJs.isValidOrcidId(orcidId);
+		expect(validationResult).toBe(false);
+	});
+});
