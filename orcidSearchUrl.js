@@ -58,13 +58,21 @@
 		}
 		return false;
 	};
+	
+	function extractOrcidId(string){
+		var regexResult = orcidRegex.exec(string);
+		if(regexResult){
+			return regexResult[0];
+		}
+		return null;
+	}
 
 	exports.buildUrl = function(input) {
 		if (hasValue(input.text)) {
-			var regexResult = orcidRegex.exec(input.text);
-			if (regexResult) {
+			var orcidId = extractOrcidId(input.text);
+			if (orcidId) {
 				// Search for iD specifically
-				return baseUrl + "?q=orcid:" + regexResult[0] + offset(input);
+				return baseUrl + "?q=orcid:" + orcidId + offset(input);
 			}
 			// General quick search
 			return baseUrl + '?q=' + encodeURIComponent(quickSearchEDisMax + input.text) + offset(input);
