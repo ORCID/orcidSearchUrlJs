@@ -44,7 +44,7 @@
 			query += 'keyword:' + input.keyword.toLowerCase();
 			doneSomething = true;
 		}
-		return doneSomething ? baseUrl + '?q=' + encodeURIComponent(query) : null;
+		return doneSomething ? baseUrl + '?q=' + encodeURIComponent(query) + offset(input) : null;
 	}
 
 	exports.setBaseUrl = function(url) {
