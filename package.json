@@ -1,6 +1,6 @@
 {
   "name": "orcid-search-url-js",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A node module for constructing the URL to do a search across the ORCID public API",
   "main": "orcidSearchUrl.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:wjrsimpson/orcidSearchUrlJs.git"
+    "url": "git@github.com:ORCID/orcidSearchUrlJs.git"
   },
   "keywords": [
     "orcid"
@@ -16,7 +16,7 @@
   "author": "Will Simpson",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wjrsimpson/orcidSearchUrlJs/issues"
+    "url": "https://github.com/ORCID/orcidSearchUrlJs/issues"
   },
-  "homepage": "https://github.com/wjrsimpson/orcidSearchUrlJs"
+  "homepage": "https://github.com/ORCID/orcidSearchUrlJs"
 }
