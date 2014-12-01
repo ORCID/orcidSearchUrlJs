@@ -70,7 +70,7 @@ describe(
 						var url = orcidSearchUrlJs.buildUrl(input);
 						expect(url)
 								.toBe(
-										'https://orcid.org/v1.1/search/orcid-bio/?q=given-names%3Awill%20AND%20family-name%3Asimpson%20OR%20other-names%3Awill%20AND%20keyword%3Aphysics');
+										'https://orcid.org/v1.1/search/orcid-bio/?q=given-names%3Awill%20AND%20family-name%3Asimpson%20OR%20other-names%3Awill%20AND%20keyword%3Aphysics&start=0&rows=10');
 					});
 		});
 
