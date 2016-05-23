@@ -1,6 +1,6 @@
 {
   "name": "orcid-search-url-js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A node module for constructing the URL to do a search across the ORCID public API",
   "main": "orcidSearchUrl.js",
   "scripts": {
